@@ -1,6 +1,6 @@
-const studentRegistration = require('./student-registration');
+const product = require('./product');
 
 module.exports = (dependencies) => ({
-  validateStudentRegistration: studentRegistration(dependencies).validateStudentRegistration,
-  hasAvailableSpace: studentRegistration(dependencies).hasAvailableSpace,
+  validateProductCreation: product(dependencies).validateProductCreation,
+  hasAvailableSpace: product(dependencies).hasAvailableSpace,
 });

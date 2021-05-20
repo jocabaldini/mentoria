@@ -1,17 +1,9 @@
 version: "3.7"
 services:
-    db:
-        image: mongo
-        container_name: school-management-db
-        ports:
-            - ${DB_PORT}:${DB_PORT}
-        networks:
-            - rede
-    node:
+    product-management:
         build: .
-        container_name: school-management-node
+        container_name: product-management-node
         environment:
-            - DB_URI=${DB_URI}
             - BACK_PORT=${BACK_PORT}
         expose:
             - ${BACK_PORT}
@@ -20,8 +12,6 @@ services:
             - /usr/src/app/node_modules
         ports:
             - ${BACK_PORT}:${BACK_PORT}
-        depends_on:
-            - db
         networks:
             - rede
 networks:

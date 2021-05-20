@@ -1,8 +1,8 @@
-const studentRepository = require('./student-repository');
+const productRepository = require('./product-repository');
 
 module.exports = () => ({
-  studentRepository: {
-    getAvailableSpaces: studentRepository().getAvailableSpaces,
-    addRegistration: studentRepository().addRegistration,
+  productRepository: {
+    getAvailableSpaces: productRepository().getAvailableSpaces,
+    addProduct: productRepository().addProduct,
   },
 });

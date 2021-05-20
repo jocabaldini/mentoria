@@ -1,5 +1,5 @@
 /**
- * @typedef {import('./model').IStudentRegistration} StudentRegistration
+ * @typedef {import('../domain/model').IProduct} Product
  * @typedef {import('..').IDependencies} Dependencies
  */
 
@@ -16,7 +16,7 @@ module.exports = () => {
     5: 25,
     6: 10,
   };
-  const registrations = {
+  const products = {
     1: [],
     2: [],
     3: [],
@@ -25,7 +25,11 @@ module.exports = () => {
     6: [],
   };
   return {
-    getAvailableSpaces: (grade) => availableSpaces[grade] - registrations[grade].length,
-    addRegistration: (studentRegistration) => registrations[studentRegistration.grade].push(studentRegistration),
+    getAvailableSpaces: (warehouse) => {
+      return availableSpaces[warehouse] - products[warehouse].length;
+    },
+    addProduct: (product) => {
+      products[product.warehouse].push(product);
+    },
   };
 };

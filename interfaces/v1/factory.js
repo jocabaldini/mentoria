@@ -1,3 +1,3 @@
-const studentRegistrationRoutes = require('./student-registration-routes');
+const productRoutes = require('./product-routes');
 
-module.exports = (application) => studentRegistrationRoutes(application);
+module.exports = (application) => productRoutes(application);

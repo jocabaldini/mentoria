@@ -1,4 +1,4 @@
-const studentRegistration = require('./student-registration');
+const product = require('./product');
 const infrastructure = require('../infrastructure');
 const helpers = require('../helpers');
 
@@ -10,5 +10,5 @@ dependencies.domain = require('../domain')(dependencies);
 
 
 module.exports = () => ({
-  registerStudent: studentRegistration(dependencies).registerStudent,
+  createProduct: product(dependencies).createProduct,
 });

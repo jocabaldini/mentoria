@@ -34,7 +34,7 @@ const plugins = [
 ];
 module.exports = async (application) => {
   const server = hapi.server({
-    port: 3001,
+    port: process.env.BACK_PORT,
     router: {
       isCaseSensitive: false,
     },
