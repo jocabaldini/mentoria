@@ -26,4 +26,8 @@ module.exports = (dependencies) => ({
     }
     return dependencies.helpers.makeReturn(201, { message: 'Product was successfully created' });
   },
+  getProducts: (params) => {
+    const products = dependencies.infrastructure.productRepository.getProducts(params.warehouse);
+    return dependencies.helpers.makeReturn(200, { message: 'Products was listed', data: products});
+  }
 });

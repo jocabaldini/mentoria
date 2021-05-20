@@ -16,7 +16,7 @@ module.exports = () => {
     5: 25,
     6: 10,
   };
-  const products = {
+  let products = {
     1: [],
     2: [],
     3: [],
@@ -25,11 +25,8 @@ module.exports = () => {
     6: [],
   };
   return {
-    getAvailableSpaces: (warehouse) => {
-      return availableSpaces[warehouse] - products[warehouse].length;
-    },
-    addProduct: (product) => {
-      products[product.warehouse].push(product);
-    },
+    getAvailableSpaces: (warehouse) => availableSpaces[warehouse] - products[warehouse].length,
+    addProduct: (product) =>  products[product.warehouse].push(product),
+    getProducts: (warehouse) => warehouse ? products[warehouse] : products,
   };
 };

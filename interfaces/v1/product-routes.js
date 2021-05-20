@@ -33,5 +33,23 @@ module.exports = (application) => [
       },
     },
   },
+  {
+    path: '/v1/product',
+    method: 'GET',
+    config: {
+      description: 'Get all products',
+      notes: 'You can pass the warehouse ID if want only the products of that warehouse',
+      tags: ['product', 'list', 'api'],
+      handler: (req, res) => {
+        try {
+          const ret = application.getProducts(req.query);
+          return res.response(ret.data).code(ret.statusCode);
+        } catch (error) {
+          console.log(error);
+          return res.response('Internal error').code(500);
+        }
+      },
+    }
+  }
 ];
 

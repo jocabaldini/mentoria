@@ -11,4 +11,5 @@ dependencies.domain = require('../domain')(dependencies);
 
 module.exports = () => ({
   createProduct: product(dependencies).createProduct,
+  getProducts: product(dependencies).getProducts,
 });
