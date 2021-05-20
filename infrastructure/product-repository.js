@@ -16,7 +16,7 @@ module.exports = () => {
     5: 25,
     6: 10,
   };
-  let products = {
+  const products = {
     1: [],
     2: [],
     3: [],
